@@ -36,7 +36,7 @@ export const socials = [
   {
     id: 'youtube',
     name: 'YouTube',
-    platform: 'video / mixes',
+    platform: 'content / music',
     url: 'https://www.youtube.com/@Kwiatkovv',
     quote: 'videos, music and maybe shorts',
     color: '#ff0000',
@@ -46,7 +46,7 @@ export const socials = [
   {
     id: 'instagram',
     name: 'Instagram',
-    platform: 'visuals / art',
+    platform: 'life / updates',
     url: 'https://instagram.com/kwiiatkov',
     quote: 'Learn a bout me more, also reach me',
     color: '#833ab4',

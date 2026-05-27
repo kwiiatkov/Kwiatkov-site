@@ -27,42 +27,42 @@ const FLASHCARDS = [
     icon: '/images/FirstSoundtrack.png',
     topic: 'Story',
     content:
-      'I first began making beats around 2021 in LMMS as a soundtrack to a game I never realeased, then after I discovered FL studio I moved on to making Polish joke songs under a name "maricari", which I continued doing not so long ago and you can find on soundcloud. First non-soundtrack or joke songs I made were phonks (give me a break it was 2022), then thankfully I moved onto breakcore/jungle tracks. Releasing 2 albums on my spotify in 2024 I decided that I`m bored with breakcore and moved onto making any other generic beat, which I tried to sell, which gave no results so all the stuff is still dusting on my soundcloud.',
+      'I first began making beats around 2021 in LMMS as a soundtrack to a game I never released. Then, after I discovered FL Studio, I moved on to making Polish joke songs under the name "maricari", which I continued doing until not so long ago, and you can still find them on SoundCloud. The first non-soundtrack or joke songs I made were phonk tracks (give me a break, it was 2022), then thankfully I moved onto breakcore/jungle tracks. After releasing 2 albums on my Spotify in 2024, I decided that I was bored with breakcore and moved onto making more generic beats, which I tried to sell, but that gave no results, so all the stuff is still gathering dust on my SoundCloud.',
   },
   {
     id: 'inspiration',
     icon: '/images/SpotifyPlaylist.png',
     topic: 'Inspiration',
     content:
-      'I am actually unsure what inspired me to do soundtracks in the first place, later on I do know machine girl with their Neon White soundtrack was what made me keep going. For my breakcore era it was machine girl, Vertigoaway, Vierre Cloud, Nedaj and TOKYOPILL. My 808 beats era ALL comes down mostly to bxnji aka 7timex and I think he hates me for glazing him so much, other than that it was TayoLoxs, prodby668, lungskull, Lumi Athena, but also ofc also Carti, F1lthy, Pierre, Yeat and Lancey Foux. The others like hardstyle or lo-fi stuff just kind of came ot me, but for my dubstep era it`s all Camellia and playing too much osu!Mania',
+      'I am actually unsure what inspired me to do soundtracks in the first place, but later on I do know that Machine Girl and their Neon White soundtrack were what made me keep going. For my breakcore era it was Machine Girl, Vertigoaway, Vierre Cloud, Nedaj, and TOKYOPILL. My 808 beats era ALL comes down mostly to bxnji aka 7timex, and I think he hates me for glazing him so much. Other than that, it was TayoLoxs, prodby668, lungskull, Lumi Athena, but also ofc Carti, F1lthy, Pierre, Yeat, and Lancey Foux. The other stuff like hardstyle or lo-fi just kind of came to me, but for my dubstep era it`s all Camellia and playing too much osu!Mania.',
   },
-    {
+  {
     id: 'SideQuests',
     icon: '/images/TwitchStreamer.png',
     topic: 'Side Quests',
     content:
-      'Despite music being almost my whole thing, I had (and still some of them do) MANY side things: video editing, youtube letsplays, speedruns, twitch streaming, flipnote animations, gif making(really)',
+      'Despite music being almost my whole thing, I had (and still have some of) MANY side things: video editing, YouTube letsplays, speedruns, Twitch streaming, Flipnote animations, gif making (really).',
   },
   {
     id: 'AboutMe',
     icon: '/images/quietKen.png',
     topic: 'About Me',
     content:
-      'I`m 18 yo from Poland and producing has been kind of my main thing, but other than that I can play a bit on a guitar',
+      'I`m an 18-year-old from Poland, and producing has been kind of my main thing, but other than that I can play a bit of guitar.',
   },
   {
     id: 'Games',
     icon: '/images/GryBro.png',
     topic: 'Games',
     content:
-      'This is what I wasted most of my life on, so here`s a list of games I remember playing: || CS2, Roblox, Osu(mostly mania), Battlefield 2042/1/5, Hotline Miami1/2, Dying Light1/2, Celeste, Ultrakill, Max Payne 3, GTA5, Wolfenstein The New Colossus/Order, A dance of fire and ice, Geometry Dash, Minecraft, Forager, Stick it to the stickman, KatanaZero, Undertale, Deltarune, Everhood, ENA: DreamBBQ, Omori, HalfSword, Slime Rancher, Trepang2, DeadIsland2, Bloons TD6, The Elephant Collection, Skate3/4, Clone Drone in the Danger Zone, Deep Rock Galactic, Ultimate Chicken Horse, Postal2, Fortnite, Crossout, Superhot, Marvel Rivals, Castle Crashers, Super Chibi Knight, Titanfall 2, ForzaHorizon4, ChickenInvaders2/3/4/5/Universe, SCP: Secret Lab, Drunken Wrestrels2, Rounds, Move or Die, Stick Fight: The Game, SeaOfThieves, Splasher, DDraceNetwork, Peggle, Clustertruck, Super Meat Boy, Loop-Loop DX(holy goated niche), Swarm, Content warning, Lethal Company, PayDay2, Getting Over It, Multiversus, PeoplePlayground, Just Cause3, For Honor, Crab game, ETS2, Among us, LeagueOfLegends',
+      'This is what I wasted most of my life on, so here`s a list of games I remember playing: || CS2, Roblox, Osu! (mostly Mania), Battlefield 2042/1/5, Hotline Miami 1/2, Dying Light 1/2, Celeste, Ultrakill, Max Payne 3, GTA 5, Wolfenstein: The New Colossus/Order, A Dance of Fire and Ice, Geometry Dash, Minecraft, Forager, Stick It to the Stickman, Katana Zero, Undertale, Deltarune, Everhood, ENA: Dream BBQ, Omori, Half Sword, Slime Rancher, Trepang2, Dead Island 2, Bloons TD6, The Elephant Collection, Skate 3/4, Clone Drone in the Danger Zone, Deep Rock Galactic, Ultimate Chicken Horse, Postal 2, Fortnite, Crossout, Superhot, Marvel Rivals, Castle Crashers, Super Chibi Knight, Titanfall 2, Forza Horizon 4, Chicken Invaders 2/3/4/5/Universe, SCP: Secret Lab, Drunken Wrestlers 2, Rounds, Move or Die, Stick Fight: The Game, Sea of Thieves, Splasher, DDraceNetwork, Peggle, Clustertruck, Super Meat Boy, Loop-Loop DX (holy goated niche), Swarm, Content Warning, Lethal Company, PayDay 2, Getting Over It, MultiVersus, People Playground, Just Cause 3, For Honor, Crab Game, ETS2, Among Us, League of Legends',
   },
   {
     id: 'now',
     icon: '/images/Money.png',
-    topic: 'Buisness stuff',
+    topic: 'Business stuff',
     content:
-      'I`m always down to either collaborate with someone or even make a song for them. MOST of the beats and music that is on my platforms is avaible for sale. If you`re interested in either of those check out the "contact" page.',
+      'I`m always down to either collaborate with someone or even make a song for them. MOST of the beats and music on my platforms are available for sale. If you`re interested in either of those, check out the "contact" page.',
   },
 ]
 

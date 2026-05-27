@@ -16,7 +16,7 @@ const FEATURES = [
   {
     tag: '02',
     title: 'See & preview his music',
-    blurb: 'Basically a portfolio — just pick a genre and hit play, it will redirect you to it.',
+    blurb: 'Basically a portfolio — just fing a genre, hit one of the icons and it will redirect you to it.',
     icon: '/images/musicPreview.png',
     pageId: 'music',
   },

@@ -517,10 +517,10 @@ export const genres = [
     tracks: [
       {
         id: 'oth-1',
-        title: 'Way.wav.mp3.wav',
-        length: '0:59',
-        cover: 'public/images/WayWavEtc.png',
-        soundcloud: 'https://soundcloud.com/kwiatkov/waywavmp3wav',
+        title: 'placeholder title',
+        length: '2:12',
+        cover: null,
+        soundcloud: null,
         youtube: null,
         spotify: null,
       },

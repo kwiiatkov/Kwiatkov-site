@@ -199,6 +199,7 @@ export default function App() {
       {!isSplash && (
         <div
           style={{ ...playerStyles.wrapper, ...(isPlaying ? playerStyles.wrapperPlaying : {}) }}
+          className="music-player-wrapper"
           role="region"
           aria-label="Background music player"
         >

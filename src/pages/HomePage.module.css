@@ -212,9 +212,35 @@
 @media (max-width: 640px) {
   .hero { padding: 40px 22px 32px; }
   .panel { padding: 32px 22px 40px; }
+
+  /* Prevent the huge title from overflowing — stays one line, just smaller */
+  .title {
+    font-size: clamp(28px, 13vw, 168px);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
   .feature {
-    grid-template-columns: 48px 1fr 24px;
-    gap: 14px;
+    grid-template-columns: 44px 1fr 24px;
+    gap: 12px;
+    padding: 16px 14px;
   }
   .feature .featureTag { display: none; }
+
+  .featureIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .featureTitle { font-size: 14px; }
+  .featureBlurb { font-size: 12px; }
+
+  .marquee {
+    font-size: 16px;
+  }
 }

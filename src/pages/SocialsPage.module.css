@@ -65,3 +65,19 @@
   background: #3d3850;
   flex-shrink: 0;
 }
+
+/* ── Mobile: stack panels vertically ── */
+@media (max-width: 640px) {
+  .selectRow {
+    flex-direction: column;
+    min-height: unset;
+  }
+}
+
+.subtitleDesktop { display: block; }
+.subtitleMobile  { display: none; }
+
+@media (max-width: 640px) {
+  .subtitleDesktop { display: none; }
+  .subtitleMobile  { display: block; }
+}

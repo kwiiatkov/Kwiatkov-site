@@ -21,8 +21,11 @@ export default function SocialsPage() {
         <FlickerReveal as="h1" className={styles.title} delay={0.18} duration={1.6}>
           socials
         </FlickerReveal>
-        <FlickerReveal as="p" className={styles.subtitle} delay={0.3} duration={1.4}>
+        <FlickerReveal as="p" className={`${styles.subtitle} ${styles.subtitleDesktop}`} delay={0.3} duration={1.4}>
           hover to preview &mdash; click to open
+        </FlickerReveal>
+        <FlickerReveal as="p" className={`${styles.subtitle} ${styles.subtitleMobile}`} delay={0.3} duration={1.4}>
+          tap to open
         </FlickerReveal>
       </div>
 

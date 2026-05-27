@@ -41,11 +41,11 @@ export default function SocialPanel({ social, index, totalCount }) {
         </svg>
       </div>
 
-      {/* Platform name */}
-      <span className={styles.name}>{social.name}</span>
-
-      {/* Platform label */}
-      <span className={styles.platform}>{social.platform}</span>
+      {/* Platform name + label */}
+      <div className={styles.nameGroup}>
+        <span className={styles.name}>{social.name}</span>
+        <span className={styles.platform}>{social.platform}</span>
+      </div>
 
       {/* Hover quote — slides up */}
       <AnimatePresence>

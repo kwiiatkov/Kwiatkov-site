@@ -59,3 +59,13 @@ button {
   color: inherit;
   font: inherit;
 }
+
+/* Music player — smaller on mobile */
+@media (max-width: 640px) {
+  .music-player-wrapper {
+    bottom: 12px !important;
+    right: 12px !important;
+    padding: 8px 10px !important;
+    gap: 7px !important;
+  }
+}

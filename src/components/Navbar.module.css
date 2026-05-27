@@ -7,11 +7,6 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  scrollbar-width: none;
-}
-
-.nav::-webkit-scrollbar {
-  display: none;
 }
 
 .logo {
@@ -31,10 +26,11 @@
   color: #e8e4f0;
 }
 
+/* ── Desktop links ── */
 .links {
   display: flex;
   align-items: stretch;
-  flex: 1; /* fill the rest of the navbar */
+  flex: 1;
 }
 
 .link {
@@ -46,7 +42,7 @@
   padding: 14px 16px;
   border-right: 1px solid #2a2630;
   white-space: nowrap;
-  flex: 1; /* each link grows equally to fill the navbar */
+  flex: 1;
   text-align: center;
   transition: color 0.15s, background-color 0.15s;
 }
@@ -60,9 +56,92 @@
   border-right: none;
 }
 
-/* Active state — dark blue, not acid green */
 .active {
   color: #93b4e8 !important;
   background-color: #0d1829 !important;
   border-bottom: 1px solid #2d5a9e;
+}
+
+/* ── Hamburger — hidden on desktop ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 48px;
+  padding: 0 14px;
+  border-left: 1px solid #2a2630;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #a78bfa;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  transform-origin: center;
+}
+
+.barOpen1 { transform: translateY(7px) rotate(45deg); }
+.barOpen2 { opacity: 0; transform: scaleX(0); }
+.barOpen3 { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile dropdown ── */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #090909;
+  border-bottom: 1px solid #2a2630;
+  flex-direction: column;
+  z-index: 99;
+}
+
+.mobileLink {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: #6b6580;
+  padding: 16px 22px;
+  border-bottom: 1px solid #1a1820;
+  text-align: left;
+  transition: color 0.15s, background-color 0.15s;
+  width: 100%;
+}
+
+.mobileLink:last-child {
+  border-bottom: none;
+}
+
+.mobileLink:hover,
+.mobileLink.active {
+  color: #e8e4f0;
+  background-color: #111014;
+}
+
+.mobileLink.active {
+  color: #93b4e8 !important;
+  background-color: #0d1829 !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
 }

@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: calc(100vh - 49px);
+  padding: 60px 32px;
+  gap: 12px;
+}
+
+.label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 64px);
+  color: #e8e4f0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.note {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 11px;
+  color: #3d3850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

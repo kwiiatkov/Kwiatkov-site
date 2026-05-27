@@ -1,0 +1,220 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 49px);
+  padding: 0;
+  overflow: hidden; 
+}
+
+/* ─── Hero ─────────────────────────────────────────────────── */
+.hero {
+  padding: 64px 40px 48px;
+  border-bottom: 1px solid #2a2630;
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(167, 139, 250, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(147, 180, 232, 0.06) 0%, transparent 50%),
+    #0c0a12;
+}
+
+.hero::before {
+  /* subtle scanline texture */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  display: block;
+  margin-bottom: 28px;
+  text-shadow: 0 0 18px rgba(167, 139, 250, 0.25);
+}
+
+.title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(64px, 12vw, 168px);
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  color: #e8e4f0;
+  margin: 0;
+}
+
+.titleDot {
+  color: #a78bfa;
+}
+
+.lead {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(15px, 1.7vw, 20px);
+  color: #aaa3c0;
+  max-width: min(96%, 1100px); /* almost-to-edge wide */
+  margin-top: 28px;
+  line-height: 1.5;
+}
+
+/* ─── "Here you can" feature panel ─────────────────────────── */
+.panel {
+  padding: 48px 40px 56px;
+  border-bottom: 1px solid #2a2630;
+  background: #0a080f;
+}
+
+.panelTag {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #3d3850;
+  display: block;
+  margin-bottom: 28px;
+}
+
+.featureList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 56px 52px 1fr 32px;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 18px;
+  background: #0e0c14;
+  border: 1px solid #1f1a28;
+  cursor: default;
+  user-select: none;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.feature[data-clickable='true'] {
+  cursor: pointer;
+}
+
+.feature[data-clickable='true']:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+.feature:hover {
+  background: #131020;
+  border-color: #3d3260;
+  transform: translateX(4px);
+}
+
+.feature:hover .featureArrow {
+  color: #a78bfa;
+  transform: translateX(4px);
+}
+
+.featureIcon {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 22px;
+  color: #a78bfa;
+  text-align: center;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(167, 139, 250, 0.08);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.featureTag {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 11px;
+  color: #4a4460;
+  letter-spacing: 0.1em;
+}
+
+.featureBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.featureTitle {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #e8e4f0;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+
+.featureBlurb {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  color: #6b6580;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.featureArrow {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 18px;
+  color: #3d3850;
+  text-align: right;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* ─── Marquee strip ────────────────────────────────────────── */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  padding: 18px 0;
+  background: #050409;
+  border-top: 1px solid #1f1a28;
+  white-space: nowrap;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: #1f1a28;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.marquee span {
+  animation: scroll 28s linear infinite;
+  padding-right: 14px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* Smaller screens */
+@media (max-width: 640px) {
+  .hero { padding: 40px 22px 32px; }
+  .panel { padding: 32px 22px 40px; }
+  .feature {
+    grid-template-columns: 48px 1fr 24px;
+    gap: 14px;
+  }
+  .feature .featureTag { display: none; }
+}

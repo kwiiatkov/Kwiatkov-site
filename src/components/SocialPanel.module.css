@@ -1,0 +1,203 @@
+/* ════════════════════════════════════════════════════════════
+   SOCIAL PANEL — leaning, bent silhouette built from clip-path.
+
+   - Each panel's shape is a polygon with bowed left/right edges,
+     so the cut between panels reads as a curve rather than a
+     straight diagonal.
+   - --slant and --bow control the lean amount and how much the
+     edge bows outward. Bump them to taste.
+   - Adjacent panels overlap via negative margin so the curved
+     edges interlock with no gap.
+   - Default state shows a brand-tinted bg (so you can tell which
+     platform it is before hovering). Hover collapses to the
+     plain site color and the panel grows.
+   ════════════════════════════════════════════════════════════ */
+
+.panel {
+  --slant: 34px;
+  --bow: 12px;
+
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 44px 30px 40px;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 0;
+
+  /* Negative side margin so curved edges of adjacent panels overlap */
+  margin-left: calc(var(--slant) * -0.5);
+  margin-right: calc(var(--slant) * -0.5);
+
+  transition:
+    background 0.35s ease,
+    flex 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Bent / curved leaning silhouette */
+  clip-path: polygon(
+    var(--slant) 0%,
+    calc(var(--slant) - var(--bow)) 20%,
+    calc(var(--slant) - var(--bow) * 1.4) 50%,
+    calc(var(--slant) - var(--bow)) 80%,
+    0% 100%,
+    calc(100% - var(--slant)) 100%,
+    calc(100% - var(--slant) + var(--bow)) 80%,
+    calc(100% - var(--slant) + var(--bow) * 1.4) 50%,
+    calc(100% - var(--slant) + var(--bow)) 20%,
+    100% 0%
+  );
+
+  /* DEFAULT STATE — brand colour bleeds through but the dark site
+     palette dominates. Two radial gradients of the brand tint, layered
+     over a diagonal dark gradient, plus a faint scanline texture. */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    radial-gradient(ellipse at 25% 18%, color-mix(in srgb, var(--brand) 55%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 92%, color-mix(in srgb, var(--brand) 28%, transparent) 0%, transparent 60%),
+    linear-gradient(135deg, #1c1626 0%, #0b0911 100%);
+}
+
+/* First / last panels — straighten the outer edge so the row sits
+   flush against the page edges. */
+.panel:first-child {
+  margin-left: 0;
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    calc(100% - var(--slant)) 100%,
+    calc(100% - var(--slant) + var(--bow)) 80%,
+    calc(100% - var(--slant) + var(--bow) * 1.4) 50%,
+    calc(100% - var(--slant) + var(--bow)) 20%,
+    100% 0%
+  );
+}
+
+.panel:last-child {
+  margin-right: 0;
+  clip-path: polygon(
+    var(--slant) 0%,
+    calc(var(--slant) - var(--bow)) 20%,
+    calc(var(--slant) - var(--bow) * 1.4) 50%,
+    calc(var(--slant) - var(--bow)) 80%,
+    0% 100%,
+    100% 100%,
+    100% 0%
+  );
+}
+
+/* HOVER STATE — grow and switch to the plain dark site colour,
+   plus a subtle brand-coloured ring of light at the top. */
+.panel[data-hovered='true'] {
+  flex: 1.7;
+  background:
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--brand) 18%, transparent) 0%, transparent 60%),
+    #0b0911;
+}
+
+/* ── Icon container ─────────────────────────────────────────── */
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid color-mix(in srgb, var(--brand) 40%, transparent);
+  backdrop-filter: blur(2px);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.panel[data-hovered='true'] .iconWrap {
+  background-color: color-mix(in srgb, var(--brand) 22%, #0b0911);
+  border-color: color-mix(in srgb, var(--brand) 80%, transparent);
+  transform: translateY(-4px) scale(1.08);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  color: var(--brand); /* brand colour visible by default */
+  filter: saturate(0.85);
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.panel[data-hovered='true'] .icon {
+  filter: saturate(1.2) brightness(1.1);
+}
+
+/* ── Platform name ──────────────────────────────────────────── */
+.name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e8e4f0;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+  transition: color 0.3s ease;
+}
+
+/* ── Platform label ─────────────────────────────────────────── */
+.platform {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: color-mix(in srgb, var(--brand) 80%, #d9d4eb);
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.panel[data-hovered='true'] .platform {
+  color: color-mix(in srgb, var(--brand) 70%, #aaa);
+}
+
+/* ── Hover quote ────────────────────────────────────────────── */
+.quote {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  /* italic removed per request */
+  color: color-mix(in srgb, var(--brand) 75%, #fff);
+  text-align: center;
+  padding: 0 12px;
+  line-height: 1.45;
+  position: absolute;
+  bottom: 38px;
+  left: 0;
+  right: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Bottom accent line that fills on hover ─────────────────── */
+.accentLine {
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background-color: var(--brand);
+  transform-origin: left center;
+}
+
+/* Legacy slash divider — no longer used now that the panel shape
+   provides the separator itself. Kept hidden so old JSX doesn't break. */
+.slashDivider {
+  display: none;
+}

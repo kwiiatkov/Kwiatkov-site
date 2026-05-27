@@ -1,0 +1,203 @@
+.page {
+  min-height: calc(100vh - 49px);
+  padding: 0 0 60px;
+  background: #0a080f;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.header {
+  padding: 48px 40px 32px;
+  border-bottom: 1px solid #2a2630;
+}
+
+.eyebrow {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #e8e4f0;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 10px;
+  color: #4a4460;
+  margin-top: 14px;
+  letter-spacing: 0.1em;
+}
+
+/* ── Carousel layout ───────────────────────────────────────── */
+.carousel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 48px);
+  padding: 56px 24px;
+  min-height: 460px;
+}
+
+/* ── Arrow buttons ─────────────────────────────────────────── */
+.navBtn {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3d3260;
+  background: rgba(167, 139, 250, 0.06);
+  color: #a78bfa;
+  cursor: pointer;
+  border-radius: 50%;
+  flex-shrink: 0;
+  z-index: 30;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navBtn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.navBtn:hover {
+  background: rgba(167, 139, 250, 0.18);
+  border-color: #a78bfa;
+  transform: scale(1.06);
+  box-shadow: 0 4px 22px rgba(167, 139, 250, 0.25);
+}
+
+.navBtn:active { transform: scale(0.96); }
+
+.navBtn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ── Card deck ─────────────────────────────────────────────── */
+.deck {
+  position: relative;
+  width: min(460px, 100%);
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+}
+
+/* ── Individual card ───────────────────────────────────────── */
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 26px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(167, 139, 250, 0.10) 0%, transparent 55%),
+    radial-gradient(circle at 80% 100%, rgba(147, 180, 232, 0.06) 0%, transparent 55%),
+    #110e1a;
+  border: 1px solid #1f1a28;
+  cursor: pointer;
+  text-align: left;
+  -webkit-user-select: none;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+.card[data-center='true'] {
+  cursor: default;
+  border-color: #3d3260;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(167, 139, 250, 0.12) inset;
+}
+
+/* ── Card icon (image) ─────────────────────────────────────── */
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  background: rgba(167, 139, 250, 0.08);
+}
+
+/* ── Card topic heading ────────────────────────────────────── */
+.cardTopic {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: #e8e4f0;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ── Card body text — bumped up significantly ──────────────── */
+.cardContent {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;           /* was 14px */
+  font-weight: 500;          /* slightly bolder for clarity */
+  line-height: 1.65;         /* roomier leading */
+  color: #e2ddf5;            /* brighter: was #d9d4eb */
+  overflow: auto;
+  flex: 1;
+  /* Custom scrollbar to match the dark theme */
+  scrollbar-width: thin;
+  scrollbar-color: #3d3260 transparent;
+}
+
+.cardContent::-webkit-scrollbar { width: 4px; }
+.cardContent::-webkit-scrollbar-track { background: transparent; }
+.cardContent::-webkit-scrollbar-thumb {
+  background: #3d3260;
+  border-radius: 2px;
+}
+
+.cardContent p {
+  margin: 0 0 12px;
+}
+
+.cardContent p:last-child { margin-bottom: 0; }
+
+/* ── Counter ───────────────────────────────────────────────── */
+.counter {
+  text-align: center;
+  font-family: 'Fragment Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: #6b6580;
+  margin: 0;
+  padding: 0 40px;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .header { padding: 32px 22px 24px; }
+  .carousel { gap: 8px; padding: 36px 12px; }
+  .navBtn { width: 44px; height: 44px; }
+  .navBtn svg { width: 18px; height: 18px; }
+  .deck { width: min(300px, 100%); height: 400px; }
+  .card { padding: 22px 20px; gap: 12px; }
+  .cardContent { font-size: 14px; }
+}

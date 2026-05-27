@@ -1,0 +1,68 @@
+.nav {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #2a2630;
+  background: #090909;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.logo {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #a78bfa;
+  padding: 14px 18px;
+  border-right: 1px solid #2a2630;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.logo:hover {
+  color: #e8e4f0;
+}
+
+.links {
+  display: flex;
+  align-items: stretch;
+  flex: 1; /* fill the rest of the navbar */
+}
+
+.link {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: #6b6580;
+  padding: 14px 16px;
+  border-right: 1px solid #2a2630;
+  white-space: nowrap;
+  flex: 1; /* each link grows equally to fill the navbar */
+  text-align: center;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.link:hover {
+  color: #e8e4f0;
+  background-color: #111014;
+}
+
+.link:last-child {
+  border-right: none;
+}
+
+/* Active state — dark blue, not acid green */
+.active {
+  color: #93b4e8 !important;
+  background-color: #0d1829 !important;
+  border-bottom: 1px solid #2d5a9e;
+}

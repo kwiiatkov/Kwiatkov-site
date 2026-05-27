@@ -1,0 +1,270 @@
+.page {
+  min-height: calc(100vh - 49px);
+  padding: 0 0 60px;
+  background: #0a080f;
+}
+
+/* ── Page header ───────────────────────────────────────────── */
+.pageHeader {
+  padding: 48px 40px 32px;
+  border-bottom: 1px solid #2a2630;
+}
+
+.eyebrow {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6b6580;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #e8e4f0;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 10px;
+  color: #4a4460;
+  margin-top: 14px;
+  letter-spacing: 0.1em;
+}
+
+/* ── Genre sections ────────────────────────────────────────── */
+.genres {
+  display: flex;
+  flex-direction: column;
+}
+
+.genre {
+  padding: 44px 40px 36px;
+  border-bottom: 1px solid #1f1a28;
+}
+
+.genreHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 6px;
+}
+
+.genreNumber {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 12px;
+  color: #4a4460;
+  letter-spacing: 0.1em;
+}
+
+.genreName {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(20px, 2.4vw, 28px);
+  color: #e8e4f0;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.genreDescription {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  color: #6b6580;
+  margin: 0 0 26px;
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+/* ── Track grid ─────────────────────────────────────────────── */
+.trackGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+/* ── Track card (horizontal) ────────────────────────────────── */
+.trackCard {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  padding: 14px;
+  background: #100d18;
+  border: 1px solid #1f1a28;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.trackCard:hover {
+  background: #16121f;
+  border-color: #3d3260;
+  transform: translateY(-2px);
+}
+
+/* ── Cover ──────────────────────────────────────────────────── */
+.cover {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  background: #1a1623;
+  flex-shrink: 0;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.coverPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(167, 139, 250, 0.18), transparent 60%),
+    linear-gradient(135deg, #1a1424 0%, #0e0b16 100%);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 32px;
+  color: rgba(167, 139, 250, 0.35);
+}
+
+/* ── Right side: title top, length + platform btns bottom ───── */
+.trackBody {
+  display: grid;
+  grid-template-areas:
+    'title  title'
+    'length btns';
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  gap: 6px 10px;
+  min-width: 0;
+}
+
+.trackTitle {
+  grid-area: title;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #e8e4f0;
+  margin: 0;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+  align-self: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.trackLength {
+  grid-area: length;
+  font-family: 'Fragment Mono', monospace;
+  font-size: 11px;
+  color: #6b6580;
+  letter-spacing: 0.1em;
+  align-self: end;
+}
+
+/* ── Platform buttons row ───────────────────────────────────── */
+.platformBtns {
+  grid-area: btns;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* Shrinks to fit however many buttons are actually rendered */
+  width: fit-content;
+  justify-self: end;
+}
+
+/* "coming soon" shown only when no links at all */
+.noLinks {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: #2a2630;
+  text-transform: uppercase;
+}
+
+/* Base platform button */
+.platformBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  text-decoration: none;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+  flex-shrink: 0;
+}
+
+.platformBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* SoundCloud — orange */
+.platform_soundcloud {
+  background: rgba(255, 85, 0, 0.1);
+  border: 1px solid rgba(255, 85, 0, 0.25);
+  color: #ff5500;
+}
+.platform_soundcloud:hover {
+  background: rgba(255, 85, 0, 0.22);
+  border-color: rgba(255, 85, 0, 0.55);
+  transform: scale(1.1);
+  box-shadow: 0 3px 12px rgba(255, 85, 0, 0.3);
+}
+
+/* YouTube — red */
+.platform_youtube {
+  background: rgba(255, 0, 0, 0.08);
+  border: 1px solid rgba(255, 0, 0, 0.22);
+  color: #ff4444;
+}
+.platform_youtube:hover {
+  background: rgba(255, 0, 0, 0.2);
+  border-color: rgba(255, 0, 0, 0.5);
+  transform: scale(1.1);
+  box-shadow: 0 3px 12px rgba(255, 0, 0, 0.25);
+}
+
+/* Spotify — green */
+.platform_spotify {
+  background: rgba(30, 215, 96, 0.08);
+  border: 1px solid rgba(30, 215, 96, 0.22);
+  color: #1ed760;
+}
+.platform_spotify:hover {
+  background: rgba(30, 215, 96, 0.18);
+  border-color: rgba(30, 215, 96, 0.5);
+  transform: scale(1.1);
+  box-shadow: 0 3px 12px rgba(30, 215, 96, 0.22);
+}
+
+@media (max-width: 640px) {
+  .pageHeader { padding: 32px 22px 24px; }
+  .genre { padding: 32px 22px 28px; }
+  .trackGrid { grid-template-columns: 1fr; gap: 12px; }
+  .trackCard { grid-template-columns: 80px 1fr; }
+  .cover { width: 80px; height: 80px; }
+  .platformBtn { width: 28px; height: 28px; }
+  .platformBtn svg { width: 14px; height: 14px; }
+}

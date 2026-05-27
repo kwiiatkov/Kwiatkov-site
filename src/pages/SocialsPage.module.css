@@ -1,0 +1,67 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 49px); /* full height minus nav */
+  padding: 0 0 40px;
+}
+
+.header {
+  padding: 40px 32px 28px;
+  border-bottom: 1px solid #2a2630;
+}
+
+.eyebrow {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #3d3850;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #e8e4f0;
+}
+
+.subtitle {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 10px;
+  color: #4a4460;
+  margin-top: 10px;
+  letter-spacing: 0.08em;
+}
+
+/* The character-select row — takes up the real estate */
+.selectRow {
+  display: flex;
+  flex: 1;
+  min-height: 420px;
+  border-bottom: 1px solid #2a2630;
+}
+
+.footerNote {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 9px;
+  color: #3d3850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 20px 32px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #3d3850;
+  flex-shrink: 0;
+}

@@ -11,7 +11,7 @@ import ContactPage from './pages/ContactPage'
 /* ════════════════════════════════════════════════════════════════════
    BACKGROUND THEME SONG
    ════════════════════════════════════════════════════════════════════ */
-const THEME_SONG_SRC = '/MainTheme.wav'
+const THEME_SONG_SRC = '/audio/MainTheme.wav'
 const THEME_SONG_VOLUME = 0.35
 
 const PAGES = {

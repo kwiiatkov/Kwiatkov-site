@@ -34,7 +34,7 @@ const FLASHCARDS = [
     icon: '/images/SpotifyPlaylist.png',
     topic: 'Inspiration',
     content:
-      'I am actually unsure what inspired me to do soundtracks in the first place, later on I do know machine girl with their Neon White soundtrack was what made me keep going. For my breakcore era it was machine girl, Vertigoaway, Vierre Cloud, Nedaj and TOKYOPILL. My 808 beats era ALL comes down mostly to bxnji aka 7timex and I think he hates me for glazing him so much, other than that it was TayoLoxs, prodby668, lungskull, Lumi Athena, but also ofc also Carti, F1lthy, Pierre, Yeat and Lancey Foux. The others like hardstyle or lo-fi stuff just kind of came ot me, but for my dubstep era it`s all Camellia and playing too much osu!Mania',
+      'I am actually unsure what inspired me to do soundtracks in the first place, later on I do know machine girl with their Neon White soundtrack was what made me keep going. For my breakcore era it was machine girl, Vertigoaway, Vierre Cloud, Nedaj and TOKYOPILL. My 808 beats era ALL comes down mostly to bxnji aka 7timex and I think he hates me for glazing him so much, other than that it was TayoLoxs, prodby668, lungskull, Lumi Athena, but also ofc big shots like F1lthy, Pierre, TGRC, Yeat and Lancey Foux. The others like hardstyle or lo-fi stuff just kind of came ot me, but for my dubstep era it`s all Camellia and playing too much osu!Mania',
   },
     {
     id: 'SideQuests',
@@ -42,13 +42,6 @@ const FLASHCARDS = [
     topic: 'Side Quests',
     content:
       'Despite music being almost my whole thing, I had (and still some of them do) MANY side things: video editing, youtube letsplays, speedruns, twitch streaming, flipnote animations, gif making(really)',
-  },
-  {
-    id: 'AboutMe',
-    icon: '/images/quietKen.png',
-    topic: 'About Me',
-    content:
-      'I`m 18 yo from Poland and producing has been kind of my main thing, but other than that I can play a bit on a guitar',
   },
   {
     id: 'Games',
